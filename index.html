@@ -1,14 +1,30 @@
-<!DOCTYPE html>
-<html lang="ko">
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
 
-
-    <h1><strong>About Me</strong></h1>
-    <h2>최정연</h2>
-    <ul><h3>Few things about me</h3>
-        <li>Major : Electronic Engineering</li>
-        <li>Age : 22</li>
-        <li>Hobby : Game(Splatoon 2), Watching Netflix(CSI, Orange is the New Black)</li>
-        <li>Phone Number : 010-2110-8712</li>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+  <a class="navbar-brand" href="#">Navbar w/ text</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'aboutme' %}">About Me<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'splatoon' %}">My Favorite Game</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'itservice' %}">IT Service</a>
+      </li>
     </ul>
-
-</html>
+    <span class="navbar-text">
+      Navbar text with an inline element
+    </span>
+  </div>
+</nav>
+             
+{% block content %}
+{% endblock %}
+             
